@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  options:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017
+      - PORT=3000
+  mongo:
+    image: mongo:6.0
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+volumes:
+  mongo:

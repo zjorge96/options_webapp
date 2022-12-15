@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Stock Options</title>
+
+        <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+        <!-- Load static -->
+        <link rel="stylesheet" href="static/css/project.css"/>
+        <script src="static/js/project.js"></script>
+
+    </head>
+    <body>
+        <!-- Nav bar -->
+        {% include "core/nav.html" %}
+        <div class="container">
+		    <h1>Capstone: Final Project by Zachary Jorgensen</h1>
+        </div>
+        <div class="container">
+            <h2>{{ sector }} Calls</h2>
+            <table class="table table-dark table-striped" id="call_table">
+                {% include "options/contract_header.html" %}
+                {% for row in results %}
+                {% if row.Expiration != "Invalid Date" %}
+                <tr>
+                    <td>{{ row.Ticker }}</td>
+                    <td>{{ row.Call.RoI }}&#37;</td>
+                    <td>{{ row.Call.Current }}</td>
+                    <td>{{ row.Call.Strike }}</td>
+                    <td>{{ row.Call.Bid }}</td>
+                    <td>{{ row.Expiration }}</td>
+                    <td>{{ row.Days }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+            <h2>{{ sector }} Puts</h2>
+            <table class="table table-dark table-striped" id="put_table">
+                {% include "options/contract_header.html" %}
+                {% for row in results %}
+                {% if row.Expiration != "Invalid Date" %}
+                <tr>
+                    <td>{{ row.Ticker }}</td>
+                    <td>{{ row.Put.RoI }}&#37;</td>
+                    <td>{{ row.Put.Current }}</td>
+                    <td>{{ row.Put.Strike }}</td>
+                    <td>{{ row.Put.Bid }}</td>
+                    <td>{{ row.Expiration }}</td>
+                    <td>{{ row.Days }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+            <p></p>
+            <div class="jumbotron">
+                <p>Return to the lists page.</p>
+                <a href="/lists" class="btn btn-success">Return</a>
+            </div>
+        </div>
+    </body>
+</html>

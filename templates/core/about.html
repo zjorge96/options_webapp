@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Capstone - About</title>
+
+    <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+    <link rel="stylesheet" href="/static/css/project.css"/>
+    <script src="static/js/project.js"></script>
+
+  </head>
+
+  <div>
+    <body>
+			<!-- Nav bar -->
+			{% include "core/nav.html" %}
+      <h1>Stock Options by Zachary Jorgensen</h1>
+      <div class="col-5">
+        <img src="static/photo/ocean_pic_of_zach.jpg" alt="Zachary Jorgensen" class="img-fluid">
+      </div>
+
+      <!-- Describing my backstory -->
+      <p></p>
+      <p>My name is Zachary Adam Jorgensen. I was born and raised here in Chico. I started attending Chico State in the Spring of 2020 and will be completing my degree Fall 2022. I love to play video games and code in my free time. My favorite food is sushi.</p>
+
+      <!-- Describing my process to create the webapp project -->
+      <p></p>
+      <p>The thought for creating this app began after the market crash of 2020. I found that I could make a small weekly amount from just the price of an option contract. I decided to write a script to find the best options within the S&P 500.</p>
+    </body>
+  </div>
+</html>

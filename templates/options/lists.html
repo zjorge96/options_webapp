@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Lists</title>
+
+    <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+    <!-- Load static -->
+    <link rel="stylesheet" href="static/css/project.css"/>
+    <script src="static/js/project.js"></script>
+
+  </head>
+  <body>
+		<!-- Nav bar -->
+		{% include "core/nav.html" %}
+    <div class="container">
+      <h1>Options homepage</h1>
+      <h2>What would you like to do?</h2>
+    </div>
+    <div class="container">
+      <div class="jumbotron">
+        <p>Evaluate a list.</p>
+        <form method="POST" action="/options">
+          <select name="sector">
+            <option disabled selected> -- Choose a List -- </option>
+            
+            {% for l in sectors %}
+            <option value="{{ l }}">{{ l }}</option>
+            {% endfor %}
+          </select>
+          <input type="submit" class="btn btn-success" value="Choose List"/>
+        </form>
+        <p></p>
+        {% if user %}
+          <p>Add or delete a ticker to an exsisting list.</p>
+          <a href="/add_ticker" class="btn btn-success">Add Ticker</a>
+          <a href="/delete_ticker" class="btn btn-secondary">Delete Ticker</a>
+          <p></p>
+          <p>Add or delete a ticker to a new list.</p>
+          <a href="/add_list" class="btn btn-success">Add List</a>
+          <a href="/delete_list" class="btn btn-secondary">Delete List</a>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

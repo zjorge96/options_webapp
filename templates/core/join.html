@@ -1,0 +1,38 @@
+<html>
+  <head>
+    
+    <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+    <!-- Load static -->
+    <link rel="stylesheet" href="static/css/project.css"/>
+    <script src="static/js/project.js"></script>
+
+  </head>
+  <body>
+    {% include "core/nav.html" %}
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Join</h1>
+        <form method="POST" action="/join">
+          <table>
+            <tr>
+              <td><label for="email">Email</label></td>
+              <td><input type="email" placeholder="email" name="email"></td>
+            </tr>
+            <tr>
+              <td><label for="username">Username</label></td>
+              <td><input type="text" placeholder="username" name="username"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password</label></td>
+              <td><input type="password" placeholder="password" name="password"></td>
+            </tr>
+          </table>
+          <input type="submit" class="btn btn-success" value="Join"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

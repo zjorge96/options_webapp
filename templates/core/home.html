@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Capstone - Home</title>
+
+    <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+    <!-- Load static -->
+    <link rel="stylesheet" href="static/css/project.css"/>
+    <script src="static/js/project.js"></script>
+
+  </head>
+  <body>
+    <!-- Nav bar -->
+    {% include "core/nav.html" %}
+    <div class="container">
+      <h1>Web Apps by Zachary Jorgensen</h1>
+      <p>This is a landing page for my apps. Please choose an app below or from the navigation bar above.</p>
+      <div class="jumbotron">
+        <p>Go to the stock options evaluator app.</p>
+        <a href="/lists" class="btn btn-success">Stock Options</a>
+      </div>
+    </div>
+  </body>
+</html>

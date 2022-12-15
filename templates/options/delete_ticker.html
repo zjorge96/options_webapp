@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Final Project - Delete Ticker</title>
+    <script src="nunjucks.js"></script>
+
+		{% include "core/bootstrap.html" %}
+
+    <!-- Load static -->
+    <link rel="stylesheet" href="static/css/project.css"/>
+    <script src="static/js/project.js"></script>
+
+  </head>
+  <body>
+		<!-- Nav bar -->
+		{% include "core/nav.html" %}
+		<div class="container">
+      <div class="jumbotron">
+			  <h1>Delete a Ticker</h1>
+        <form method="POST" action="/delete_ticker">
+          <table>
+            <tr>
+              <select name="list">
+                <option disabled selected> -- Choose a List -- </option>
+                <option value="list1">list1</option>
+                <!-- {% for l in sectors %}
+                  <option value="{{ l }}">{{ l }}</option>
+                {% endfor %} -->
+              </select>
+            </tr>
+            <tr>
+              <td><input type="text" placeholder="new ticker" name="ticker"></td>
+            </tr>
+            <tr><td>
+              <input type="submit" class="btn btn-success" value="Delete"/>
+              <a href="/lists" name= "delete_t" class="btn btn-secondary">Cancel</a>
+            </td></tr>
+          </table>
+        </form>
+      </div>
+		</div>
+  </body>
+</html>
