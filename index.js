@@ -168,24 +168,3 @@ app.post('/delete_ticker', async (req, res) => {
     // Delete the ticker from the database
     res.redirect('/lists');
 });
-
-// Used to test the options chain
-// async function main() {
-//     // Test multiple tickers and queue up the promises
-//     const tickers = await options.getTickers('Basic Materials');
-//     console.log(tickers);
-//     // const tickers = ['aapl', 'msft', 'amzn', 'goog', 'fb', 'nflx', 'tsla', 'nvda', 'amd', 'intc', 'adbe', 'pypl', 'crm', 'cmcsa', 'qcom', 'amgn', 'cost', 'sbux', 'pep', 'mcd', 'dis', 'nke', 'sbux', 'wmt', 'ba', 'hd', 'v', 'mrk', 'pg', 'jnj', 'unh', 'ko', 'jpm', 'axp', 'vz', 'cat', 'gs', 'trv', 'dow', 'cvx', 'xom', 'wfc', 'bac', 'mmm', 'mrna', 'pltr', 'nio', 'plug', 'sq', 'twtr', 'baba', 'bby', 'tgt', 'm', 't', 'tmus', 'atvi', 'gme', 'nok', 'amd', 'amzn', 'aapl', 'fb', 'goog', 'msft', 'nflx', 'tsla', 'nvda', 'intc', 'adbe', 'pypl', 'crm', 'cmcsa', 'qcom', 'amgn', 'cost', 'sbux', 'pep', 'mcd', 'dis', 'nke', 'sbux', 'wmt', 'ba', 'hd', 'v', 'mrk', 'pg', 'jnj', 'unh', 'ko', 'jpm', 'axp', 'vz', 'cat', 'gs', 'trv', 'dow', 'cvx', 'xom', 'wfc', 'bac', 'mmm', 'mrna', 'pltr', 'nio', 'plug', 'sq', 'twtr', 'baba', 'bby', 'tgt', 'm', 't', 'tmus', 'atvi', 'gme', 'nok'];
-//     const promises = tickers.map(ticker => options.getOptionsChain(ticker));
-//     const results = await Promise.all(promises);
-//     // Sort the options by the highest ROI ignoring the ones that are 0
-//     results.sort((a, b) => b.Call.RoI - a.Call.RoI).filter(option => option.Call.RoI != 0);
-//     // Print the top 10 options
-//     for (var i = 0; i < 10; i++) {
-//         if (!(isNaN(results[i].Days))) {
-//             console.log(results[i]);
-//         }
-//     }
-
-// }
-
-// main();
